@@ -1,0 +1,10 @@
+//JOINS
+create table college(clg_id int , clg_name varchar(30),primary key(clg_id));
+insert into college values (1,'Sri eshwar');
+insert into college values (2,'Karpagam');
+insert into college values (3, 'PSG'),(4,'Kongu');
+
+create table student(stu_id int,stu_name varchar(30),clg_id int, primary key(stu_id));
+insert into student values (001,'Thirsha',1),(002,'Vaishnavi',2),(003,'Sumi',3);
+select college.clg_id,college.clg_name,student.stu_name,student.clg_id
+from college right join student on college.clg_id=student.clg_id;
