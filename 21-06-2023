@@ -1,3 +1,21 @@
+//DATATYPES
+*NUMBER
+*BIGINT
+*STRING
+*NULL
+*UNDEFINED
+*SYMBOL
+*OBJECTS
+
+//OBJECT IN JS
+const user={                    
+     name:"Thirsha",
+     age:18,
+     mobno:9837465437,
+     email:"abc@gmail.com",
+     college:"sri eshwar",
+ };
+
 const user=Object.freeze({                    //freeze (constant no updation or deletion)
      name:"Thirsha",
      age:18,s
