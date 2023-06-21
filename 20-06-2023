@@ -8,3 +8,4 @@ create table student(stu_id int,stu_name varchar(30),clg_id int, primary key(stu
 insert into student values (001,'Thirsha',1),(002,'Vaishnavi',2),(003,'Sumi',3);
 select college.clg_id,college.clg_name,student.stu_name,student.clg_id
 from college right join student on college.clg_id=student.clg_id;
+
