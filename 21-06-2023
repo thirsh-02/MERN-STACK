@@ -1,0 +1,113 @@
+const user=Object.freeze({                    //freeze (constant no updation or deletion)
+     name:"Thirsha",
+     age:18,s
+     mobno:9837465437,
+     email:"abc@gmail.com",
+     college:"sri eshwar",
+ });
+
+ const user=Object.keys({                       //keys
+     name:"Thirsha",
+     age:18,
+     mobno:9837465437,
+     email:"abc@gmail.com",
+     college:"sri eshwar",
+ });
+
+const user=Object.values({                          //values
+    name:"Thirsha",
+    age:18,
+    mobno:9837465437,
+    email:"abc@gmail.com",
+    college:"sri eshwar",
+});
+console.log(user);
+
+
+const userx={                         //Mutation at object level only
+    name:"x",                         // should not use this
+    age:60                            
+};
+const usery=userx;                     //it refers the address of userx
+usery.age=30;
+console.log(userx,usery);
+
+
+const userx={                        
+    name:"x",                         
+    age:60                            
+};
+const usery={...userx};                //spread operator doesnot refers the address just copies    
+usery.age=30;
+console.log(userx,usery);
+
+
+const details={                                 //Nested objects
+    address:{
+        street: 'second street',
+        city: 'coimbatore'
+    }
+};
+console.log(details.address.city);
+
+
+const details={                                 
+   /* address:{
+         street: 'second street',
+         city: 'coimbatore'
+     } */
+    city: 'coimbatore'
+};
+console.log(details.address?.city);          //?(optional chain)-to prevent from error
+
+
+//FUNCTIONS
+syntax:
+function function_name(p1,p2..){     //declaration and definition
+}
+function_name(p1,p2..);             //calling function
+function sum(num1,num2){
+    if(typeof(num1)==="number" && typeof(num2)==="number")
+    console.log(num1+num2);
+    else
+    console.log("Invalid number");
+}
+sum("ftsd",5);
+
+//double equal-to(only compares the value)
+0==false   O/P=true
+//triple equal-to(comapres the value and datatype)
+0==true    O/P=false
+
+//ARROW FUNCTION
+const sum=(num1,num2) => {
+    return num1+num2;      // return statement must
+}
+sum(1,2);
+(OR)
+const sum=(num1,num2) =>  num1+num2;
+sum(1,2);
+
+//IIFE :  Immediately invoking function expression(it is method of calling)
+(function sum(num1,num2){
+    if(typeof(num1)==="number" && typeof(num2)==="number")
+    console.log(num1+num2);
+    else
+    console.log("Invalid number");
+})(10,20);
+
+//HIGH ORDER FUNCTION : Calling a function as parameter inside a function ,or a function returning a function
+ const calci  = (num1,num2, operation)=>{
+     return operation(num1,num2);
+ }
+
+ calci(10,20,(num1,num2)=>num1+num2);
+(OR)
+const sum=(num1,num2) => num1+num2;
+const sub=(num1,num2) => num1-num2;
+const mul=(num1,num2) => num1*num2;
+const div=(num1,num2) => num1/num2;
+const calci  = (num1,num2, operation)=>{  // operation func is callback function since this function is passed as parameter
+    return operation(num1,num2);
+}
+calci(10,20,sum);
