@@ -251,9 +251,13 @@ console.log(abc);
 (OR)
 const apiCall=async()=>           //async---> for using await function
 {
-    const promise_from_api=await fetch('https://jsonplaceholder.typicode.com/todos')
+   try{
+const promise_from_api=await fetch('https://jsonplaceholder.typicode.com/todos')
     const data=await promise_from_api.json();
     console.log(data);
+} catch(error){
+   console.log(error)
+}
 }
 apiCall();
 
