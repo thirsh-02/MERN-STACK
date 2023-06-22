@@ -170,6 +170,42 @@ let ans1=employee.filter((ele)=>ele.salary>=25000).map(ele=>{                //a
 });
 console.log(ans1);
 
+//De-structuring array elements ----> unpacking elements
+let arr=[10,20,30,40,50];
+let[a,b,c,d,e]=arr;
+console.log(a);
+
+//De-structuring ----> unpacking elements
+let arr=[10,20,30,40,50,60,70];
+let[a,b,c,d,...e]=arr;          // rest operator in destructuring
+console.log(a,b,c,d,e);
+
+//De-structuring ----> unpacking elements
+let arr=[10,20,30,40,50];            // 30 should be skipped
+let[a,b,,c,d]=arr;          
+console.log(a,b,c,d);
 
 
+//Objects De-structuring ----> unpacking elements
+let obj={
+    name:"sece",
+    year:2024,
+    city:"cbe",
+    dept:"mech",
+    lpa:"50lpa",
+};
+let {name,year,city,...next} = obj;     //rest operator
+console.log(name,year,city,next);
+
+
+//Objects De-structuring ----> unpacking elements
+let obj={
+    name:"sece",
+    year:2024,
+    city:"cbe",
+    dept:"mech",
+    lpa:"50lpa",
+};
+let {name: clg_name,year,city,...next} = obj;     //rename operator (original name will be deleted)
+console.log(clg_name,year,city,next);
 
