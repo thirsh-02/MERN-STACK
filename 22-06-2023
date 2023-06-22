@@ -66,4 +66,50 @@ arr=["Hello","Hii","Welcome"];
 let ans=arr.map(ele => ele);
 console.log(ans);
 
+//Filter --> here return should be condition thenn ele will be pushed
+let num=[1,2,3,4,5];
+let ans=num.filter(ele =>{
+    return ele%2;                        //returns odd
+})
+console.log(ans);
+
+let num=[1,2,3,4,5];
+let ans=num.filter(ele =>{
+    return !(ele%2);                        //returns even
+})
+console.log(ans);
+
+
+//TASK: return array of names above the birth year 2002
+let names_obj=[
+    {
+        name:"Thirsha",
+        dob:2003
+    },
+    {
+        name:"Sushmitha",
+        dob:2009
+    },
+    {
+        name:"Murugesan",
+        dob:1872
+    },
+    {
+        name:"Deepa",
+        dob:1880
+    }
+];                                                             
+let ans=names_obj.map(ele=>{                               //using map
+    if(ele.dob>=2002) return ele.name;
+})
+console.log(ans);
+
+
+let ans1=name_obj.filter(ele=>ele.dob>=2003);               //using filter
+let names=ans.map(ele => ele.name);
+console.log(names);
+
+
+let ans2=name_obj.filter(ele=>ele.dob>=2003).map(ele => ele.name);         //using map and filter
+console.log(ans2);
 
