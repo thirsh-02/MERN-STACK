@@ -1,0 +1,69 @@
+//Palindrome
+function Palindrome(str){
+    let i=0,j=str.length-1;
+    while(i<j){
+        if(str.charAt(i)!=str.charAt(j)){
+           return false;
+        }
+        i++; 
+        j--;
+    }
+    return true;
+};
+console.log(Palindrome("hello"));
+
+(OR)  
+
+let str="malayalam";
+let pal=str.split("");
+pal.reverse();
+let ans=pal.join("");
+console.log(ans);
+if(str == pal){
+    console.log("True")
+}
+else{
+    console.log("False");
+}
+
+//LOOPS
+//FOR IN
+let obj={                           //Mostly used for traversing a object
+    a:1,b:2,c:3                     // if applied to array index values are obtained
+};
+for(let key in obj){
+    console.log(key,object(key))
+}
+
+//LOOPS
+//FOR OF ---> ES6
+let arr=[1,2,3,4,5];                                //Mostly used for arrays
+for(let key of arr){                                //directly key values can be obtained
+    console.log(key);
+}
+
+// Array callback methods
+let names=["Thisha","Vaisaaa","Sumiii","Sweee"];
+names.forEach((ele)=>{
+    console.log(ele);
+})
+
+//repeat
+// Array callback methods
+let names=["Thisha","Vaisaaa","Sumiii","Sweee"];
+names.forEach((ele)=>{
+    console.log(ele.repeat(2));
+})
+
+// Array callback methods
+let names=["Thisha","Vaisaaa","Sumiii","Sweee"];  //if one argument is passed in arraw function then brackets are optional
+names.forEach(ele=>{                              //if one statement then curly braces optional
+    console.log(ele);
+})
+
+//Map()--> same as foreach but returns as array
+arr=["Hello","Hii","Welcome"];
+let ans=arr.map(ele => ele);
+console.log(ans);
+
+
