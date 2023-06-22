@@ -99,7 +99,7 @@ let names_obj=[
         dob:1880
     }
 ];                                                             
-let ans=names_obj.map(ele=>{                               //using map
+let ans=names_obj.map(ele=>{                               //using map function
     if(ele.dob>=2002) return ele.name;
 })
 console.log(ans);
