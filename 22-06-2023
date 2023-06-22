@@ -113,3 +113,63 @@ console.log(names);
 let ans2=name_obj.filter(ele=>ele.dob>=2003).map(ele => ele.name);         //using map and filter
 console.log(ans2);
 
+//shallow copy
+const arr=[1,2,3,4,5];   // reference is copied. both the array points to the same container  also for objects
+const arr2=arr;
+arr[2]=200;
+console.log(arr2,arr);
+
+//Deep copy
+const arr=[1,2,3,4,5];   // whole array is copied. both the array points to the different container   also for objects
+const arr2={...arr};
+arr[2]=200;
+console.log(arr2,arr);
+
+//overiding the values
+const obj={                 //order wont be changed only the value overrides
+    name:"sush",
+    age:14,
+    name:"thirsh"
+};
+console.log(obj);
+
+
+//task: employee object-->name,age,salary,mobno
+//Return the object name and age who has salary above than 25000 in the form of array of objects
+let employee=[
+    {
+        name:"Ramesh",
+        age:20,
+        salary:30000,
+        mobno:8765432901
+    },
+    {
+        name:"Suresh",
+        age:20,
+        salary:24000,
+        mobno:6543210987
+    },
+    {
+        name:"Abishek",
+        age:23,
+        salary:60000,
+        mobno:9078563412
+    },
+    {
+        name:"Harish",
+        age:25,
+        salary:40000,
+        mobno:9567890123
+    }
+];
+let ans=employee.filter((ele)=>ele.salary>=25000).map((ele)=>[ele.name,ele.age]);       //array
+console.log(ans);
+
+let ans1=employee.filter((ele)=>ele.salary>=25000).map(ele=>{                //array of objects
+    return {name:ele.name,age:ele.age}; 
+});
+console.log(ans1);
+
+
+
+
