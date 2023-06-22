@@ -230,5 +230,30 @@ let obj={
     lpa:"50lpa",
     color:"blue";
 };
-let {name: clg_name,year,city,color="green"} = obj;     //if field is already present (o/p)=>blue
+let {name: clg_name,year,city,color="green"} = obj;     //if field is already present (o/p)=>blue  
 console.log(clg_name,year,city,color);   
+
+//excuting each time after a particular time.
+setInterval(()=>console.log('hello'),1000);
+
+//excuting after a particular time.
+setTimeout(()=>console.log('hello'),3000);        --->Asynchornous 
+
+
+//promise
+//state=pending,resolve,reject
+const abc=fetch('https://jsonplaceholder.typicode.com/todos')
+console.log(abc);
+      
+       abc.then(response => response.json())
+       .then(json => console.log(json))                // returns the promise
+       .catch(val => console.log(val))                 // if any error occurs, catch will handle
+
+//Example using setTimeOut
+const abc=new Promise(resolve,reject)=>{
+setTimeout(()=>
+{
+    resolve("Done");
+},1000)
+})
+abc.then((value)=>console.log(value)).catch((error)=>console.log('error',error));
