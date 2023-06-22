@@ -209,3 +209,26 @@ let obj={
 let {name: clg_name,year,city,...next} = obj;     //rename operator (original name will be deleted)
 console.log(clg_name,year,city,next);
 
+
+//Objects De-structuring ----> unpacking elements
+let obj={
+    name:"sece",
+    year:2024,
+    city:"cbe",
+    dept:"mech",
+    lpa:"50lpa",
+};
+let {name: clg_name,year,city,color="green"} = obj;     //if field not in object (o/p)=>green
+console.log(clg_name,year,city,color);   
+
+//Objects De-structuring ----> unpacking elements
+let obj={
+    name:"sece",
+    year:2024,
+    city:"cbe",
+    dept:"mech",
+    lpa:"50lpa",
+    color:"blue";
+};
+let {name: clg_name,year,city,color="green"} = obj;     //if field is already present (o/p)=>blue
+console.log(clg_name,year,city,color);   
