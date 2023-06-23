@@ -1,0 +1,58 @@
+//Add, delete and edit using id
+const USER_DATA=[
+    {
+    id:1,
+    name:"Thirsha",
+    age:18,
+    email:"abc@gmail.com"
+}
+];
+//CRUD
+const addUser=(new_user)=>{
+      USER_DATA.push(new_user);
+}
+addUser({id:2,name:"Sushmitha",age:13,email:"xyz@gmail.com"});
+
+const editUser=(nid,nkey,value)=>{
+      for(let i=0;i<USER_DATA.length;i++){
+        if(USER_DATA[i].id==nid){
+              USER_DATA[i][nkey]=value;  //use square brackets for get the value
+        }
+      }
+}
+editUser(2,"age",14);
+
+const editMParameters=(nid,update_obj)=>{           //Editing multiple parameters
+    for(let i=0;i<USER_DATA.length;i++){
+        if(USER_DATA[i].id==nid){
+            for(key in update_obj){                        //Easy to traverse through objects
+                USER_DATA[i][key]=update_obj[key];
+            }
+        }
+    }
+}
+editMParameters(1,{name:"Deepa",age:39});
+console.log(USER_DATA);
+(OR)
+const editMparameters=(id,update_obj)=>{
+const index=USER_DATA.findIndex((val)=>val.id===id);
+if(index!=-1){
+    USER_DATA[index]={
+        ...USER_DATA[index],                               //spread operator
+        ...update_obj
+    }
+}
+}
+editMparameters(1,{name:"Murugesan",age:39});
+console.log(USER_DATA);
+
+
+const deluser=(nid)=>{
+    for(let i=0;i<USER_DATA.length;i++){
+         if(USER_DATA[i].id==nid){
+            USER_DATA.slice(i,1);
+         }
+    }
+}
+deluser(1);
+
