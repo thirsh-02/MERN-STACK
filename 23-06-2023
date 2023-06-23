@@ -135,3 +135,50 @@ setInterval(()=>
 // selecting based on class and id
 let sel=document.getElementsByClassName("cse"); // same class can be used in different tag
 let sel1=document.getElementById("unique"); // id should be unique,no repeatation allowed
+
+*************************************************************************************************************************
+//LOGIN PAGE
+
+//html***********************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+     
+</head>
+<body>
+    <div><form action="">
+        <div>
+            <label for="">Username</label>
+                <input type="text">
+        </div>
+        <div>
+            <label for="">Password</label>
+                <input type="text">
+        </div>
+        <button>Login</button>
+    </form>
+</div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
+
+
+//javascript************************************************************************************************************
+const button=document.getElementById("login-button");
+const username=document.getElementById("user");
+const password=document.getElementById("pass");
+const form=document.getElementById("login");
+button.addEventListener('click',(event)=>                       //when button is clicked then event is passed and this function is called.
+{
+console.log(event);
+}
+)
+form.addEventListener('submit',(event)=>                       //when button is clicked then event is passed and this function is called.
+{
+    event.preventDefault();                                    //stops the default behavior so username name and passwaord will not be displayed on web search bar
+    console.log(username.value);
+}
+)
