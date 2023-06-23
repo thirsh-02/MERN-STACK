@@ -1,6 +1,6 @@
 //Add, delete and edit using id
-const USER_DATA=[
-    {
+export const USER_DATA=[        // export is used for exporting the data to other file, in other file this should be imported using (import {whatever exported} from "./modulename.js")    
+    {                           // in html for exporting (<script type="module" src="file_name.js"></script>
     id:1,
     name:"Thirsha",
     age:18,
@@ -26,7 +26,7 @@ const editMParameters=(nid,update_obj)=>{           //Editing multiple parameter
     for(let i=0;i<USER_DATA.length;i++){
         if(USER_DATA[i].id==nid){
             for(key in update_obj){                        //Easy to traverse through objects
-                USER_DATA[i][key]=update_obj[key];
+                USER_DATA[i][key]=update_obj[key];         //new parameter cant be added
             }
         }
     }
@@ -38,8 +38,8 @@ const editMparameters=(id,update_obj)=>{
 const index=USER_DATA.findIndex((val)=>val.id===id);
 if(index!=-1){
     USER_DATA[index]={
-        ...USER_DATA[index],                               //spread operator
-        ...update_obj
+        ...USER_DATA[index],                               //spread operator-->values like id,name,age,email
+        ...update_obj                                      // whatever will give here.. if the parameter is present then it updates with new value or the new parameter is added
     }
 }
 }
