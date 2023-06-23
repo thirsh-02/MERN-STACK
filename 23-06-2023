@@ -67,3 +67,51 @@ import user,{
       edituser as edit,
       deleteuser as delete
 }    // as is used for alias name
+
+
+
+//DOM ---> document object model
+
+document.body.innerText="hello";    // to add the text dynamically using javascript
+document.body.innerHTML="<div>hello</div>   // innerhtml is used for adding the tags
+
+document.body.innerHTML="<div>hello</div>";    // to change the color of the background
+document.body.style.backgroundColor="teal";
+
+//using children() will return elements with tag
+//using childrenNode() will return all the text,tags,nodes,comment etc
+const allChild=document.body.children;
+allChild[1].style.color="green";
+
+//change the color of each div with a time interval
+const allChild=document.body.children;
+setTimeout(()=>
+{
+    allChild[0].style.color="red";
+},3000)
+setTimeout(()=>
+{
+    allChild[1].style.color="yellow";
+},6000)
+setTimeout(()=>
+{
+    allChild[2].style.color="green";
+},9000)
+
+//change the color with wording 
+const allChild=document.body.children;
+setTimeout(()=>
+{
+    allChild[0].innerText="RED";
+    allChild[0].style.color="red";
+},3000)
+setTimeout(()=>
+{
+    allChild[1].innerText="YELLOW";
+    allChild[1].style.color="yellow";
+},6000)
+setTimeout(()=>
+{
+    allChild[2].innerText="GREEN";
+    allChild[2].style.color="green";
+},9000)
