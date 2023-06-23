@@ -115,3 +115,23 @@ setTimeout(()=>
     allChild[2].innerText="GREEN";
     allChild[2].style.color="green";
 },9000)
+
+//Using different colours after a time inteval
+const allChild=document.body.children;
+let col=["red","blue","green","violet","pink"];
+let i=0;
+const func=()=>{
+    allChild[0].style.color=col[i];
+    i++;
+    if(i>col.length)
+    i=0;
+}
+setInterval(()=>
+{
+    func()
+},3000);
+
+
+// selecting based on class and id
+let sel=document.getElementsByClassName("cse"); // same class can be used in different tag
+let sel1=document.getElementById("unique"); // id should be unique,no repeatation allowed
