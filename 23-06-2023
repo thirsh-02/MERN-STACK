@@ -56,3 +56,14 @@ const deluser=(nid)=>{
 }
 deluser(1);
 
+
+//only once the default export can be used for only one function
+syntax: export default USER_DATA (at the end can be given) even if name is changed in import file even then it calls the default function
+
+//if normally imported then the aliasing of names can be done
+eg:
+import user,{
+      adduser as add,
+      edituser as edit,
+      deleteuser as delete
+}    // as is used for alias name
