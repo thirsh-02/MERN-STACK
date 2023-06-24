@@ -1,0 +1,53 @@
+//NODE JS
+cd Desktop         //path
+node filename      //file name
+
+function sum(num1,num2)
+{
+    console.log(num1+num2);
+}
+sum(10,20);
+
+//while giving input node file_name inputs
+//exporting node 
+//in file 1 : app.js******************************************************************************
+function sum(num1,num2)
+{
+    console.log(num1+num2);
+}
+
+function sub(num1,num2)
+{
+    console.log(num1-num2);
+}
+
+ function mul(num1,num2)
+{
+    console.log(num1*num2);
+}
+
+function div(num1,num2)
+{
+    console.log(num1/num2);
+}
+
+module.exports={sum,sub,mul,div};
+
+in file 2 index.js***********************************************************************************
+const { sum,sub,mul,div } = require('./app');
+let num1=parseInt(process.argv[2]);   //parseInt for type conversion  //process.argv ---> for getting input
+let num2=parseInt(process.argv[3]);
+let c=process.argv[4];
+
+if(c=='+'){
+    console.log(sum(num1,num2));
+}
+else if(c=='-'){
+    console.log(sub(num1,num2));
+}
+else if(c=='*'){
+    console.log(mul(num1,num2));
+}
+else if(c=='/'){
+    console.log(div(num1,num2));
+}
