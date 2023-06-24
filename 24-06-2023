@@ -53,7 +53,7 @@ else if(c=='/'){
 }
 
 
-const fs=require('fs');                      //creating the text file
+const fs=require('fs');                      //reading the text file
 fs.readFile(`${__dirname}/states.txt`,(err,data)=>{
        if(err){
         console.log("ERROR!!!⚠️");
@@ -67,3 +67,14 @@ fs.readFile(`${__dirname}/states.txt`,(err,data)=>{
 
 const name ='thirsha';          //template leterals
 console.log(`Hello ${name} ! How are you?`);    //name is placeholder
+
+//WRITING A FILE
+const inputData="Hello!!! This is new file";
+fs.writeFile(`${__dirname}/file1.txt`,inputData,(err)=>{
+    if(err){
+        console.log("Error in writing the function");
+    }
+    else{
+        console.log("Done Writing!!!");
+    }
+})
