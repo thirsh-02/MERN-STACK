@@ -62,3 +62,8 @@ fs.readFile(`${__dirname}/states.txt`,(err,data)=>{
         console.log(data.toString());
        }
 })
+
+
+
+const name ='thirsha';          //template leterals
+console.log(`Hello ${name} ! How are you?`);    //name is placeholder
