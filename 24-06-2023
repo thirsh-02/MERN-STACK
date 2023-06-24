@@ -1,4 +1,4 @@
-//NODE JS
+//NODE JS         //https://roadmap.sh/node.js
 cd Desktop         //path
 node filename      //file name
 
@@ -34,7 +34,7 @@ function div(num1,num2)
 module.exports={sum,sub,mul,div};
 
 in file 2 index.js***********************************************************************************
-const { sum,sub,mul,div } = require('./app');
+const { sum,sub,mul,div } = require('./app');   //common js for importing in backend
 let num1=parseInt(process.argv[2]);   //parseInt for type conversion  //process.argv ---> for getting input
 let num2=parseInt(process.argv[3]);
 let c=process.argv[4];
