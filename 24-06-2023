@@ -51,3 +51,14 @@ else if(c=='*'){
 else if(c=='/'){
     console.log(div(num1,num2));
 }
+
+
+const fs=require('fs');                      //accessing the text file
+fs.readFile(`${__dirname}/states.txt`,(err,data)=>{
+       if(err){
+        console.log("ERROR!!!⚠️");
+       }
+       else{
+        console.log(data.toString());
+       }
+})
