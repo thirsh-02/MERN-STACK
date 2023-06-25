@@ -78,3 +78,60 @@ fs.writeFile(`${__dirname}/file1.txt`,inputData,(err)=>{
         console.log("Done Writing!!!");
     }
 })
+
+
+
+//PROMISE
+function read(filepath){                                   //promise for reading a file
+       return new Promise((resolve, reject)=>{
+              fs.readFile(filepath,(err,data)=>{
+                     if(err){
+                            reject("Failed during read");
+                     }
+                     else{
+                            resolve(data);
+                     }
+              })
+       })
+}
+function write(filepath,input){                            //promise of writing the file
+       return new Promise((resolve, reject)=>{
+              fs.writeFile(filepath,input,(err)=>{
+                     if(err){
+                            reject("Failed during read");
+                     }
+                     else{
+                            resolve("Completed");
+                     }
+              })
+       })
+} 
+read(`${__dirname}/states.txt`)                         //reading and writing the file simultaneously
+.then((data)=>{
+       console.log(data.toString());
+       return write(`${__dirname}/test.txt`,data)
+       .then((data)=>{
+              console.log(data);
+       })
+})
+.catch((err)=>{
+       console.log(err);
+})
+ 
+
+//ASYNC and AWAIT
+const fileOperation= async()=>{                               
+       try{
+              const states=await read(`${__dirname}/states.txt`);
+              const result=await write(`${__dirname}/test2.txt`,states);
+              console.log(result);
+       }catch(error){
+              console.log(error);
+       }
+}
+fileOperation();
+
+//TASKS
+//first----->states
+//second----->capitals
+//third------->state and capitals
