@@ -1,5 +1,0 @@
-Node Package Manager(npm)-------->inbuild,public
---> It consists of a meta data(using express as the back end)
-//npm init (in console)-----> creates a json file
-//npm install express---->creates a node modules which consists of the files installed
-
