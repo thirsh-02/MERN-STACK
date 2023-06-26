@@ -57,3 +57,46 @@ for(key in arr){                               //key in arrays will take the ind
 //To get keyss
 console.log(Object.keys(info))
 console.log(Object.values(info))
+
+
+//To get keyss
+console.log(typeof(Object.keys(info)));
+for(let i=0;i<arr.length;i++){
+    if(typeof(arr[i])=="object"){
+    const b=arr[i][keys];
+    console.log(info[b]);
+    }
+}
+
+//Accessing the keys inside the child
+for(key in info){
+    if(typeof(info[key])=='object'){
+    const arr=Object.keys(info[key]);
+    
+for(let i=0;i<arr.length;i++){                               
+    console.log(info[key][arr[i]]);
+}
+    }
+else{
+    console.log(info[key]);
+}
+}
+
+//accessing the keys of nested objects too
+const info=require(`./personal.json`);
+
+function print(obj)
+{
+    const keys=Object.keys(obj);
+    for(let i=0;i<keys.length;i++){
+        const key=keys[i];
+        if(typeof obj[key]==='object'){
+            print(obj[key]);
+        }
+        else{
+            console.log(obj[key]);
+        }
+    }
+}
+
+print(info);
