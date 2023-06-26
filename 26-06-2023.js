@@ -100,3 +100,22 @@ function print(obj)
 }
 
 print(info);
+
+//Creating a Web Server
+const http=require('http');
+const hostname='localhost';
+const port=3001;
+
+const requestListener=function(request,response){
+    response.setHeader("Content-Type","text/html");
+    response.writeHead(200);                                         //status code
+    
+    response.end(`
+    <h1>Caution</h1>
+    <p>Be Carefulll!!!!!</p>
+    `);
+}
+const server=http.createServer(requestListener);
+server.listen(port,hostname, () =>{
+    console.log("Server is running");
+})
