@@ -119,3 +119,48 @@ const server=http.createServer(requestListener);
 server.listen(port,hostname, () =>{
     console.log("Server is running");
 })
+
+
+
+//WRITING STATES FROM A FILE
+const http=require('http');
+const fs=require('fs');
+function read(filepath){                                           //promise for reading a file
+    return new Promise((resolve, reject)=>{
+           fs.readFile(filepath,(err,data)=>{
+                  if(err){
+                         reject("Failed during read");
+                  }
+                  else{
+                         resolve(data);
+                  }
+           })
+    })
+}
+const hostname='localhost';
+const port=3001;
+const requestListener=async(request,response)=>{
+try{
+    const states= await read(`${__dirname}/states.txt`);
+    response.setHeader("Content-Type","application/json");
+    response.writeHead(200);
+    response.end(`
+    {
+        "states":${states},
+    }
+    `);
+}
+catch{
+    response.setHeader("Content-Type","application/json");
+    response.writeHead(200);
+    response.end(`
+    {
+        "err":"Failed"
+    }
+    `)
+}
+}
+const server=http.createServer(requestListener);
+server.listen(port,hostname, () =>{
+    console.log("Server is running");
+})
